@@ -1,0 +1,1 @@
+-e "__pycache__/\n.ipynb_checkpoints\nvenv/\n*.pyc\n*.pyo\n*.pyd" 
