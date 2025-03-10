@@ -1,94 +1,95 @@
+
 import os
 import zipfile
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 import time
-
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
 from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
 
-zip_path = r"C:\Users\Seyit Kaan\Desktop\adult.zip"
-extract_path = r"C:\Users\Seyit Kaan\Desktop\extracted_adult"
+def load_and_preprocess_data(zip_filename, extract_to, csv_filename):
 
-if not os.path.exists(extract_path):
-    os.makedirs(extract_path)
+    zip_path = os.path.join(os.getcwd(), zip_filename)
 
-with zipfile.ZipFile(zip_path, 'r') as z:
-    print("ZIP içeriği:", z.namelist())
-    z.extract("adult.data", path=extract_path)
+    if not os.path.exists(extract_to):
 
-data_file = os.path.join(extract_path, "adult.data")
+        os.makedirs(extract_to)
 
-col_names = ['age', 'workclass', 'fnlwgt', 'education', 'education-num',
-             'marital-status', 'occupation', 'relationship', 'race', 'sex',
-             'capital-gain', 'capital-loss', 'hours-per-week', 'native-country', 'income']
+    with zipfile.ZipFile(zip_path, 'r') as zfile:
 
-df = pd.read_csv(data_file, header=None, names=col_names, na_values='?')
+        zfile.extract(csv_filename, path=extract_to)
 
-print("\nİlk 5 Satır:")
-print(df.head())
+    data_path = os.path.join(extract_to, csv_filename)
 
-print("\nVeri Seti Bilgisi:")
-print(df.info())
+    columns = ['age','workclass','fnlwgt','education','education-num','marital-status','occupation','relationship','race','sex','capital-gain','capital-loss','hours-per-week','native-country','income']
 
-print("\nİstatistiksel Özet:")
-print(df.describe())
+    adult_df = pd.read_csv(data_path, header=None, names=columns, na_values='?')
 
-print("\nSınıf Dağılımı ('income' sütunu):")
-print(df['income'].value_counts())
+    for col in adult_df.select_dtypes(include=["object"]).columns:
 
-print("\nEksik Değer Sayıları:")
-print(df.isnull().sum())
+        adult_df[col].fillna(adult_df[col].mode()[0], inplace=True)
 
-categorical_cols = df.select_dtypes(include=["object"]).columns
-for col in categorical_cols:
-    df[col].fillna(df[col].mode()[0], inplace=True)
+    for col in adult_df.select_dtypes(include=["int64","float64"]).columns:
 
-numeric_cols = df.select_dtypes(include=["int64", "float64"]).columns
-for col in numeric_cols:
-    df[col].fillna(df[col].mean(), inplace=True)
+        adult_df[col].fillna(adult_df[col].mean(), inplace=True)
 
-features = ['age', 'education-num', 'capital-gain', 'capital-loss', 'hours-per-week']
-target = 'income'
+    return adult_df
 
-df[target] = df[target].apply(lambda x: 1 if x.strip() in ['>50K', '>50K.'] else 0)
 
-X = df[features]
-y = df[target]
+
+df_adult = load_and_preprocess_data("adult.zip", "extracted_adult_unique", "adult.data")
+
+selected_features = ['age','education-num','capital-gain','capital-loss','hours-per-week']
+
+df_adult['income'] = df_adult['income'].apply(lambda x: 1 if x.strip() in ['>50K','>50K.'] else 0)
+
+X = df_adult[selected_features]
+
+y = df_adult['income']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-print("\n--- Scikit-learn GaussianNB ---")
-gnb = GaussianNB()
+model_gnb = GaussianNB()
 
 start_train = time.time()
-gnb.fit(X_train, y_train)
-train_time_sklearn = time.time() - start_train
 
-start_pred = time.time()
-y_pred_sklearn = gnb.predict(X_test)
-predict_time_sklearn = time.time() - start_pred
+model_gnb.fit(X_train, y_train)
 
-print("Eğitim Zamanı (Scikit-learn):", train_time_sklearn)
-print("Tahmin Zamanı (Scikit-learn):", predict_time_sklearn)
+train_duration = time.time() - start_train
 
-acc_sklearn = accuracy_score(y_test, y_pred_sklearn)
-print("Doğruluk (Scikit-learn):", acc_sklearn)
-print("Classification Report (Scikit-learn):")
-print(classification_report(y_test, y_pred_sklearn))
+start_predict = time.time()
 
-cm_sklearn = confusion_matrix(y_test, y_pred_sklearn)
-print("Karmaşıklık Matrisi (Scikit-learn):\n", cm_sklearn)
+y_predictions = model_gnb.predict(X_test)
 
-plt.figure(figsize=(6, 5))
-plt.imshow(cm_sklearn, interpolation='nearest', cmap=plt.cm.Blues)
-plt.title("Scikit-learn GaussianNB - Karmaşıklık Matrisi")
+predict_duration = time.time() - start_predict
+
+print(train_duration, predict_duration, accuracy_score(y_test, y_predictions))
+
+print(classification_report(y_test, y_predictions))
+
+cm = confusion_matrix(y_test, y_predictions)
+
+print(cm)
+
+plt.figure(figsize=(6,5))
+
+plt.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
+
+plt.title("GaussianNB - Confusion Matrix")
+
 plt.colorbar()
-tick_marks = np.arange(2)
-plt.xticks(tick_marks, ['<=50K', '>50K'], rotation=45)
-plt.yticks(tick_marks, ['<=50K', '>50K'])
-plt.xlabel('Tahmin Edilen Etiket')
-plt.ylabel('Gerçek Etiket')
+
+tick_labels = ['<=50K','>50K']
+
+plt.xticks(np.arange(len(tick_labels)), tick_labels, rotation=45)
+
+plt.yticks(np.arange(len(tick_labels)), tick_labels)
+
+plt.xlabel("Tahmin")
+
+plt.ylabel("Gerçek")
+
 plt.show()
+
