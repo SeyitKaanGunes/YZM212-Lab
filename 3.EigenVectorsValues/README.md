@@ -123,3 +123,6 @@ NumPy eigenvalues:  [5. 3. 7.]
 
 Saf Python yöntemiyle elde edilen {7,  5,  3} değerleri, NumPy’nın döndürdüğü {5,  3,  7} ile aynı küme hâlindedir.
 Aralarındaki tek fark, NumPy’nın sıralamayı farklı bir permütasyonla vermesidir ki özdeğerler kümesi açısından hiçbir işlevsel fark yaratmaz.
+
+
+Seyit Kaan GÜNEŞ 23291060
