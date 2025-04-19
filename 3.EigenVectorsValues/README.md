@@ -113,15 +113,24 @@ Fortran’daki `dgeev` (real) veya `zgeev` (complex) LAPACK rutinine yönlendirm
 Aşağıdaki adımları izleyerek, “LucasBN/Eigenvalues-and-Eigenvectors” deposundaki saf Python kodunu referans alıp yeniden uyguladım ve elde ettiğim sonuçları NumPy’nın `np.linalg.eig` fonksiyonuyla karşılaştırdım:
 
 `find_determinant` fonksiyonu, verilen kare matrisin determinantını özyinelemeli kofaktör açılımı ile hesaplıyor.
+
 `characteristic_equation` ve `determinant_equation` fonksiyonları, matrisi (A−λI) biçimine çevirip bu matrisin determinantını bir polinom (karakteristik denklem) katsayı listesi olarak üretiyor.
+
 `find_eigenvalues` ise bu polinomun köklerini `numpy.roots` ile bularak özdeğerleri elde ediyor.
+
 Yukarıdaki işlevlerin tümünü tek bir Python dosyasına kopyaladım.
+
 Dosyada ayrıca `compare_with_numpy` adında bir yardımcı fonksiyon oluşturdum; bu fonksiyon hem saf Python hem de NumPy yöntemlerini aynı matris üzerinde çalıştırıp sonucu döndürüyor.
+
 Sonuç : 
+
 Custom eigenvalues: [7. 5. 3.]
+
 NumPy eigenvalues:  [5. 3. 7.]
 
+
 Saf Python yöntemiyle elde edilen {7,  5,  3} değerleri, NumPy’nın döndürdüğü {5,  3,  7} ile aynı küme hâlindedir.
+
 Aralarındaki tek fark, NumPy’nın sıralamayı farklı bir permütasyonla vermesidir ki özdeğerler kümesi açısından hiçbir işlevsel fark yaratmaz.
 
 
