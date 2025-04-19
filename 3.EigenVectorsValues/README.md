@@ -63,7 +63,6 @@ Kaynakça:
     
 -   “Introduction to Kernel PCA.” _GeeksforGeeks_. Published 2 years ago. (https://www.geeksforgeeks.org/ml-introduction-to-kernel-pca/?utm_source=chatgpt.com)
     
--   Ferreira, Carolina. “What Is Latent Semantic Indexing (LSI) and How Does It Work?” _Meilisearch Blog_. Published March 18 2025.(https://www.meilisearch.com/blog/tag/ai?utm_source=chatgpt.com)
 
 
 #  SORU 2- np.linalg.eig dokümantasyon Özeti
