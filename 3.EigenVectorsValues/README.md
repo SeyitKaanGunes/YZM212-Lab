@@ -27,16 +27,22 @@ Makine öğrenmesinde ise boyut indirgeme, öznitelik seçimi , spektral kümele
 # Kullanılan yöntemler :
  **PCA (Ana Bileşen Analizi):**  
 Verideki en büyük “dalgalanmaları” (farklılıkları) yakalayıp veriyi daha küçük boyutta ifade etmeye yarar. Yani, orijinal karmaşık veri setini, bilgi kaybını en aza indirerek daha sade bir görünümle temsil eder.
+
 **SVD (Tekil Değer Ayrıştırması):**  
 Elinizdeki herhangi bir veri tablosunu, temel yapı taşlarına (“temel desenlere”) ayırır. Böylece hem gürültüyü (önemsiz ayrıntıları) azaltabilir hem de verinin asıl kalıplarını ön plana çıkarabilirsiniz.
+
 **LDA (Lineer Ayrım Analizi):**  
 Etiketli verideki farklı grupları (örneğin “kedi” vs. “köpek”) en net ayıracak biçimde yeni eksenler bulur. Böylece gruplar arasında karışıklığı en aza indirerek sınıflandırmayı kolaylaştırır.    
+
 **Spektral Kümeleme:**  
 Veriyi bir ağ (graf) gibi düşünür; her nokta aralarındaki bağlantı güçlü olanlarla bir arada toplanır. Karmaşık ilişki ağlarından birden çok küme çıkararak benzerlikleri gruplar hâline getirir.
+
 **Kernel PCA:**  
 PCA’yı düz hatlarla ayıramayacağınız karmaşık verilerde de kullanabilmek için veriyi “gizli bir alana” taşır. Orada PCA’yı uygulayıp sonra tekrar geri getirerek, doğrusal olmayan kalıpları da yakalar.
+
 **LSI (Gizli Anlamsal İndeksleme):**  
 Metin madenciliğinde, belge-terim ilişkilerini örüntüleriyle birlikte inceler. Böylece farklı kelime ve belgeler arasındaki “örtük” (gizli) bağlantıları fark edip metinleri anlam temelli gruplara ayırır.
+
 
 Her yöntemin ortak amacı, veri tablosunun içindeki en önemli düzeni bulup öne çıkarmak; gereksiz ayrıntıları ise geri planda tutarak modelleri hem daha hızlı hem de genelleyici hâle getirmektir.
 
