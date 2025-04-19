@@ -47,21 +47,19 @@ Metin madenciliğinde, belge-terim ilişkilerini örüntüleriyle birlikte incel
 Her yöntemin ortak amacı, veri tablosunun içindeki en önemli düzeni bulup öne çıkarmak; gereksiz ayrıntıları ise geri planda tutarak modelleri hem daha hızlı hem de genelleyici hâle getirmektir.
 
 Kaynakça:
--   Brownlee, Jason. “Introduction to Matrices and Matrix Arithmetic for Machine Learning.” _Machine Learning Mastery_. Published 3.5 years ago. (https://www.machinelearningmastery.com/introduction-matrices-machine-learning/?utm_source=chatgpt.com)
+-   Brownlee, Jason. “Introduction to Matrices and Matrix Arithmetic for Machine Learning.” _Machine Learning Mastery_. Published 3.5 years ago. (https://www.machinelearningmastery.com/introduction-matrices-machine-learning)
     
--   Brownlee, Jason. “A Gentle Introduction to Matrix Operations for Machine Learning.” _Machine Learning Mastery_. Published 5.7 years ago.(https://www.machinelearningmastery.com/matrix-operations-for-machine-learning/?utm_source=chatgpt.com)
+-   Brownlee, Jason. “A Gentle Introduction to Matrix Operations for Machine Learning.” _Machine Learning Mastery_. Published 5.7 years ago.(https://www.machinelearningmastery.com/matrix-operations-for-machine-learning)
     
--   Brownlee, Jason. “Gentle Introduction to Eigenvalues and Eigenvectors for Machine Learning.” _Machine Learning Mastery_. Published 5.7 years ago. (https://www.machinelearningmastery.com/introduction-to-eigendecomposition-eigenvalues-and-eigenvectors/?utm_source=chatgpt.com)
+-   Brownlee, Jason. “Gentle Introduction to Eigenvalues and Eigenvectors for Machine Learning.” _Machine Learning Mastery_. Published 5.7 years ago. (https://www.machinelearningmastery.com/introduction-to-eigendecomposition-eigenvalues-and-eigenvectors)
     
--   Brownlee, Jason. “Principal Component Analysis for Visualization.” _Machine Learning Mastery_. Published 3.5 years ago. (https://www.machinelearningmastery.com/principal-component-analysis-for-visualization/?utm_source=chatgpt.com)
+-   Brownlee, Jason. “Principal Component Analysis for Visualization.” _Machine Learning Mastery_. Published 3.5 years ago. (https://www.machinelearningmastery.com/principal-component-analysis-for-visualization)
     
--   Brownlee, Jason. “How to Calculate the SVD from Scratch with Python.” _Machine Learning Mastery_. Published 5.5 years ago.(https://www.machinelearningmastery.com/singular-value-decomposition-for-machine-learning/?utm_source=chatgpt.com)
+-   Brownlee, Jason. “How to Calculate the SVD from Scratch with Python.” _Machine Learning Mastery_. Published 5.5 years ago.(https://www.machinelearningmastery.com/singular-value-decomposition-for-machine-learning)
     
--   “Linear Discriminant Analysis in Machine Learning.” _GeeksforGeeks_. Published February 2025. (https://www.geeksforgeeks.org/ml-linear-discriminant-analysis/?utm_source=chatgpt.com)
-    
--   von Luxburg, Ulrike. “A Tutorial on Spectral Clustering.” _ArXiv Technical Report_, November 1 2007. (https://arxiv.org/abs/0711.0189?utm_source=chatgpt.com)
-    
--   “Introduction to Kernel PCA.” _GeeksforGeeks_. Published 2 years ago. (https://www.geeksforgeeks.org/ml-introduction-to-kernel-pca/?utm_source=chatgpt.com)
+-   “Linear Discriminant Analysis in Machine Learning.” _GeeksforGeeks_. Published February 2025. (https://www.geeksforgeeks.org/ml-linear-discriminant-analysis)
+     
+-   “Introduction to Kernel PCA.” _GeeksforGeeks_. Published 2 years ago. (https://www.geeksforgeeks.org/ml-introduction-to-kernel-pca)
     
 
 
