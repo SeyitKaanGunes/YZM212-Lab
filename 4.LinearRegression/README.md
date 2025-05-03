@@ -88,8 +88,8 @@ $$
 
 ## Kaynakça
 
-1. **Scikit-learn Documentation.** *LinearRegression* (Erişim: 06 Mayıs 2025)  
-2. **GeeksforGeeks.** “Solving Linear Regression without using sklearn and tensorflow” (Erişim: 05 Mayıs 2025)
+1. **Scikit-learn Documentation.** *LinearRegression*
+2. **GeeksforGeeks.** “Solving Linear Regression without using sklearn and tensorflow”
 
 
 Seyit Kaan GÜNEŞ 23291060
