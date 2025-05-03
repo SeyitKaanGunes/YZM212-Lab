@@ -88,7 +88,6 @@ $$
 
 ## Kaynakça
 
-1. **Kaggle.** [Pima Indians Diabetes Database](https://www.kaggle.com/uciml/pima-indians-diabetes-database) 
-2. **Scikit-learn Documentation.** *LinearRegression* (Erişim: 06 Mayıs 2025)  
-3. **GeeksforGeeks.** “Solving Linear Regression without using sklearn and tensorflow” (Erişim: 05 Mayıs 2025)  
+1. **Scikit-learn Documentation.** *LinearRegression* (Erişim: 06 Mayıs 2025)  
+2. **GeeksforGeeks.** “Solving Linear Regression without using sklearn and tensorflow” (Erişim: 05 Mayıs 2025)  
 
