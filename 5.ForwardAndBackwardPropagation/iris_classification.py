@@ -15,7 +15,7 @@ np.random.seed(42)
 # Load the Iris dataset
 print("Loading Iris dataset...")
 column_names = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
-data = pd.read_csv('data/iris.csv', header=None, names=column_names)
+data = pd.read_csv('iris.csv', header=None, names=column_names)
 
 # Display the first few rows of the dataset
 print("\nFirst 5 rows of the dataset:")
