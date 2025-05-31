@@ -1,7 +1,5 @@
 # İleri ve Geri Yayılım Algoritmaları ile Sinir Ağı Uygulaması
 
-Bu proje, YZM212 Makine Öğrenmesi dersi 6. laboratuvar çalışması kapsamında, ileri ve geri yayılım algoritmaları kullanarak sıfırdan bir sinir ağı uygulamasını içermektedir.
-
 ## Proje Hakkında
 
 Bu projede, sinir ağları için temel yapı taşları olan ileri yayılım (forward propagation) ve geri yayılım (backward propagation) algoritmaları sıfırdan uygulanmıştır. Hazır kütüphaneler kullanılmadan, NumPy ile matematiksel işlemler gerçekleştirilmiş ve bir sınıflandırma problemi çözülmüştür.
